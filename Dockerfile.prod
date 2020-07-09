@@ -5,8 +5,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 COPY DEFAULT.env ./.env
-RUN sed -i 's/access-key/$REACT_APP_ACCESS_KEY_ID/' ./.env
-RUN sed -i 's/secret-key/$REACT_APP_SECRET_ACCESS_KEY/' ./.env
+RUN sed -i "s/access-key/$REACT_APP_ACCESS_KEY_ID/" ./.env
+RUN sed -i "s/secret-key/$REACT_APP_SECRET_ACCESS_KEY/" ./.env
 RUN npm ci --silent
 RUN npm install react-scripts@3.4.1 -g --silent
 
