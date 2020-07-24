@@ -1,6 +1,11 @@
 # build environment
 ## 12.5 is a must due to npm module install failure.
 FROM node:12.5.0-alpine as build
+
+# add curl
+RUN apk upgrade --no-cache -U && \
+  apk add --no-cache curl
+
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
@@ -30,7 +35,11 @@ COPY . ./
 # Download Guild SVG logo
 RUN curl -s $REACT_APP_GUILD_BP_JSON | grep svg  | sed  's/"logo_svg"://' | sed 's/^ *//g' | tr -d '"' > ./jsonfile && \
     curl -LJO -o src/assets/img/logo.svg $(cat ./jsonfile) && \
-    mv *.svg 
+    mv *.svg && \
+    # Remove curl
+    apk del curl  && \
+    rm -rf  /tmp/*   
+
 RUN npm run build
 
 # production environment
