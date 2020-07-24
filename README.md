@@ -38,10 +38,15 @@
 
 ## ENV Variables
 
-|ENV & ARG                       |Value                                  |Description                           |
-|--------------------------------|---------------------------------------|--------------------------------------|
-|**REACT_APP_ACCESS_KEY_ID**     |`XXXXXXXXXXXXXXXX`                     | Wasabi/S3 access key        		    |
-|**REACT_APP_SECRET_ACCESS_KEY** |`XXXXXXXXXXXXXXXX`                     | Wasabi/S3 secret key 				|
+|ENV & ARG                       |Value                                |Description                        |
+|--------------------------------|-------------------------------------------------------------------------|
+|**REACT_APP_ACCESS_KEY_ID**     |`XXXXXXXXXXXXXXXX`                   | Wasabi/S3 access key              |
+|**REACT_APP_SECRET_ACCESS_KEY** |`XXXXXXXXXXXXXXXX`                   | Wasabi/S3 secret key              |
+|**REACT_APP_BUCKET_MAINNET**    |`waxmainnet`                         | Wasabi/S3 bucket name for mainnet |
+|**REACT_APP_BUCKET_TESTNET**    |`waxtestnet`                         | Wasabi/S3 bucket name for testnet |
+|**REACT_APP_WASABI_URL**        |`https://xxx.wasabisys.com/`         | Wasabi/S3 URL for your instances  |
+|**REACT_APP_WASABI_REGION**     |`eu-central-1`                       | Wasabi/S3 bucket region           |
+
 
 ## Step 1 - Clone and Build the docker container from github.
 
@@ -52,6 +57,12 @@
 
 - **REACT_APP_ACCESS_KEY_ID** - Your Wasabi/S3 API access key
 - **REACT_APP_SECRET_ACCESS_KEY** - Your Wasabi/S3 API secret key
+- **REACT_APP_BUCKET_MAINNET** - The name of your Bucket where mainnet snapshots are copied
+- **REACT_APP_BUCKET_TESTNET** - The name of your Bucket where testnet snapshots are copied
+- **REACT_APP_WASABI_URL** - The URL to access the files in your bucket
+- **REACT_APP_WASABI_REGION** - The region of your buckets.
+
+**See here fore mor details on wasabi URL and region** - https://wasabi-support.zendesk.com/hc/en-us/articles/360015106031-What-are-the-service-URLs-for-Wasabi-s-different-regions-
 
 
 **To build it:**
@@ -60,6 +71,8 @@
 docker build -f Dockerfile.prod  \
 --build-arg REACT_APP_ACCESS_KEY_ID=xxxxxxxxxx \
 --build-arg REACT_APP_SECRET_ACCESS_KEY=xxxxxxxxx \
+--build-arg REACT_APP_BUCKET_MAINNET=xxxxxxxxx \
+--build-arg REACT_APP_BUCKET_TESTNET=xxxxxxxxx \
 -t snapshots.sentnl:prod .
 ```
 

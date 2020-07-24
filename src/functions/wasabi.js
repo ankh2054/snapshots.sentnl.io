@@ -6,13 +6,19 @@ const credentials = {
     accessKeyId: process.env.REACT_APP_ACCESS_KEY_ID,
     secretAccessKey: process.env.REACT_APP_SECRET_ACCESS_KEY,
   };
-  
+
+//Endpoint url   
+const endpointurl = process.env.REACT_APP_WASABI_URL
+const region = {
+  region: process.env.REACT_APP_WASABI_REGION
+};
+
   AWS.config.update({
     credentials,
-    region: 'eu-central-1',
+    region,
   });
 
-const  ep = new AWS.Endpoint('s3.eu-central-1.wasabisys.com');
+const  ep = new AWS.Endpoint(endpointurl);
 const  s3 = new AWS.S3({endpoint: ep});
 
 

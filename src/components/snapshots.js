@@ -10,10 +10,14 @@ const Snapshots = () => {
     const chains = [ 'Mainnet', 'Testnet' ]
 
 
+const mainnet_bucket = process.env.REACT_APP_BUCKET_MAINNET
+const testnet_bucket = process.env.REACT_APP_BUCKET_TESTNET
+const wasabi_url = process.env.REACT_APP_WASABI_URL
+
 // Create new array for Wasabi
 const listKeysWasabi = (result,bucket) => {
     const objectitems = result.map(item => {
-        const download_url = 'https://s3.eu-central-1.wasabisys.com/waxtest2/'
+        const download_url = wasabi_url+bucket
         const container = {};
     
         container.Key = item.Key
@@ -44,9 +48,9 @@ const getWasabiObjects = (bucket) => {
         // Handler receives new listKeysWasabi array
         // Pass to react usestate depended on bucket name
         console.log(result)
-        if (bucketname === 'waxtest2') {
+        if (bucketname === mainnet_bucket ) {
             setSnapshots(result)
-          } else if (bucketname === 'waxtestnet') {
+          } else if (bucketname === testnet_bucket ) {
             setsnapShotswaxtest(result)
           } else {
           }
@@ -55,8 +59,8 @@ const getWasabiObjects = (bucket) => {
 
 useEffect(() => {
     // Each bucket to download from 
-    getWasabiObjects('waxtest2')
-    getWasabiObjects('waxtestnet')
+    getWasabiObjects(mainnet_bucket)
+    getWasabiObjects(testnet_bucket)
     }, [])
     return (
       <>
