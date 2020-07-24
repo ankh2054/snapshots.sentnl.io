@@ -16,9 +16,9 @@ ARG REACT_APP_GUILD_BP_JSON
 RUN sed -i "s/access-key/$REACT_APP_ACCESS_KEY_ID/" ./.env && \
      sed -i "s/secret-key/$REACT_APP_SECRET_ACCESS_KEY/" ./.env && \
      sed -i "s/mainnet-bucket/$REACT_APP_BUCKET_MAINNET/" ./.env && \
-     sed -i "s/testnet-bucket/$REACT_APP_BUCKET_TESTNET=/" ./.env && \
+     sed -i "s/testnet-bucket/$REACT_APP_BUCKET_TESTNET/" ./.env && \
      sed -i "s/wasabi-url/$REACT_APP_WASABI_URL/" ./.env && \
-     sed -i "s/region/$REACT_APP_WASABI_REGION=/" ./.env && \
+     sed -i "s/region/$REACT_APP_WASABI_REGION/" ./.env && \
      npm ci --silent && \
      npm install react-scripts@3.4.1 -g --silent
 
