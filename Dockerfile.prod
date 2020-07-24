@@ -13,14 +13,14 @@ ARG REACT_APP_BUCKET_TESTNET
 ARG REACT_APP_WASABI_URL
 ARG REACT_APP_WASABI_REGION
 ARG REACT_APP_GUILD_BP_JSON
-RUN sed -i "s/access-key/$REACT_APP_ACCESS_KEY_ID/" ./.env &
-RUN sed -i "s/secret-key/$REACT_APP_SECRET_ACCESS_KEY/" ./.env 
-RUN sed -i "s/mainnet-bucket/$REACT_APP_BUCKET_MAINNET/" ./.env 
-RUN sed -i "s/testnet-bucket/$REACT_APP_BUCKET_TESTNET=/" ./.env 
-RUN sed -i "s/wasabi-url/$REACT_APP_WASABI_URL=/" ./.env 
-RUN sed -i "s/region/$REACT_APP_WASABI_REGION=/" ./.env 
-RUN npm ci --silent 
-RUN npm install react-scripts@3.4.1 -g --silent
+RUN sed -i "s/access-key/$REACT_APP_ACCESS_KEY_ID/" ./.env && \
+     sed -i "s/secret-key/$REACT_APP_SECRET_ACCESS_KEY/" ./.env && \
+     sed -i "s/mainnet-bucket/$REACT_APP_BUCKET_MAINNET/" ./.env && \
+     sed -i "s/testnet-bucket/$REACT_APP_BUCKET_TESTNET=/" ./.env && \
+     sed -i "s/wasabi-url/$REACT_APP_WASABI_URL/" ./.env && \
+     sed -i "s/region/$REACT_APP_WASABI_REGION=/" ./.env && \
+     npm ci --silent && \
+     npm install react-scripts@3.4.1 -g --silent
 
 
 COPY . ./
