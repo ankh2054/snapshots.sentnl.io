@@ -4,20 +4,32 @@
 
 # Sentnl.io  
 
+### TO DO
 
+1. Change  const download_url = 'https://s3.eu-central-1.wasabisys.com/waxtest2/' in listKeysWasabi function to env variable
+2.  Change this to regex ( look for mainnet and or testnet) if (bucketname === 'waxtest2') {
+            setSnapshots(result)
+          } else if (bucketname === 'waxtestnet') {
+            setsnapShotswaxtest(result)
+          } else {
+          }
+3. Use .env bucket variables for this
+    getWasabiObjects('waxtest2')
+    getWasabiObjects('waxtestnet')
 
 # Automated frontend companion that pulls snapshots from S3/WASABI 
 
 **This docker container:**
 
-1. React frontend that pulls snapshots from S3/Wasabi 
+1. Creates React frontend that pulls snapshots from S3/Wasabi. 
 2. The is a companion service to https://github.com/ankh2054/snapshot-service so please make sure you first set that up.
 
 :pound: NOTE that Wasabi only costs £5 pcm for 1TB :pound:
 
 ## Requirements
 
-In order to run this I would recommend installing the following two containers that will act as a HTTP proxy to all your containers and automatically create HTTPs certificates on your behalf.
+1. In order to run this I would recommend installing the following two containers that will act as a HTTP proxy to all your containers and automatically create HTTPs certificates on your behalf.
+2. HAve yoru bucket names setup was waxtestnet 
 
 
 * https://github.com/nginx-proxy/nginx-proxy

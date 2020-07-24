@@ -7,7 +7,7 @@ const Snapshots = () => {
     const [snapShots, setSnapshots] = useState([]);
     const [snapShotswaxtest, setsnapShotswaxtest] = useState([]);
     // Chain names to render Headings in tablelist
-    const chains = [ 'Mainnet', 'Tesnet' ]
+    const chains = [ 'Mainnet', 'Testnet' ]
 
 
 // Create new array for Wasabi
