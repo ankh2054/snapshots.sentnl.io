@@ -46,6 +46,7 @@
 |**REACT_APP_BUCKET_TESTNET**    |`waxtestnet`                         | Wasabi/S3 bucket name for testnet |
 |**REACT_APP_WASABI_URL**        |`https://xxx.wasabisys.com/`         | Wasabi/S3 URL for your instances  |
 |**REACT_APP_WASABI_REGION**     |`eu-central-1`                       | Wasabi/S3 bucket region           |
+|**REACT_APP_GUILD_BP_JSON=**    |`http://guild.com/wax.json`          | URL of your .json file            |
 
 
 ## Step 1 - Clone and Build the docker container from github.
@@ -73,6 +74,9 @@ docker build -f Dockerfile.prod  \
 --build-arg REACT_APP_SECRET_ACCESS_KEY=xxxxxxxxx \
 --build-arg REACT_APP_BUCKET_MAINNET=xxxxxxxxx \
 --build-arg REACT_APP_BUCKET_TESTNET=xxxxxxxxx \
+--build-arg REACT_APP_WASABI_URL=xxxxxxxxx \
+--build-arg REACT_APP_WASABI_REGION=xxxxxxxxx \
+--build-arg REACT_APP_GUILD_BP_JSON=xxxxxxxxx \
 -t snapshots.sentnl:prod .
 ```
 

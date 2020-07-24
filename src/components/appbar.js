@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import NodeFetch from 'node-fetch' 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
-import BOMsvg from '../assets/img/bomlogo'
+//import BOMsvg from '../assets/img/bomlogo'
+//<BOMsvg style={{ fontSize: 50 }} className={classes.bomsvg} />
+import coreLogo from '../assets/img/logo.svg'
+
+import Icon from '@material-ui/core/Icon';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,10 +33,37 @@ const useStyles = makeStyles((theme) => ({
   bomsvg: {
     padding: '0 30px',
   },
+  imageIcon: { height: '100%' },
+  iconRoot: { textAlign: 'center', padding: '0 30px' },
 }));
 
+
+const guildjson = process.env.REACT_APP_GUILD_BP_JSON
+
 export default function ButtonAppBar() {
+  const [guildname, setGuildname] = useState([]);
   const classes = useStyles();
+  
+  //Fetch the Guild Candidate name
+  const guild_info = (url) => {
+    fetch(url)
+        .then((response) => {
+            if (response.status >= 200 && response.status <= 299) {
+            return response.json();
+            } else {
+            throw Error(response.statusText);
+            }
+        })
+        .then((jsonRes) => {
+             //Assign guildname to Guildname state
+             setGuildname(jsonRes['org']['candidate_name'])
+          }).catch((error) => {
+            // Handle the error
+            console.log(error);
+        });
+    
+    }
+  guild_info(guildjson)
 
   return (
     <div className={classes.root}>
@@ -40,9 +72,11 @@ export default function ButtonAppBar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <BOMsvg style={{ fontSize: 50 }} className={classes.bomsvg} />
+          <Icon style={{ fontSize: 50 }} classes={{root: classes.iconRoot}}>
+            <img alt="mainlogo" className={classes.imageIcon} src={coreLogo}/>
+          </Icon>
           <Typography fontWeight="fontWeightBold" variant="h4" className={classes.title} color='default'>
-            SNAPSHOTS
+            {guildname} - Snapshots
           </Typography>
         </Toolbar>
       </AppBar>
