@@ -35,7 +35,6 @@ COPY . ./
 # Download Guild SVG logo
 RUN curl -s $REACT_APP_GUILD_BP_JSON | grep svg  | sed  's/"logo_svg"://' | sed 's/^ *//g' | tr -d '"' > ./jsonfile && \
     curl -LJO -o src/assets/img/logo.svg $(cat ./jsonfile) && \
-    mv *.svg && \
     # Remove curl
     apk del curl  && \
     rm -rf  /tmp/*   
