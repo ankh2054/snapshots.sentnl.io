@@ -19,6 +19,9 @@ RUN sed -i "s/mainnet-bucket/$REACT_APP_BUCKET_MAINNET/" ./.env
 RUN sed -i "s/testnet-bucket/$REACT_APP_BUCKET_TESTNET/" ./.env 
 RUN sed -i "s/wasabi-url/$REACT_APP_WASABI_URL/" ./.env 
 RUN sed -i "s/region/$REACT_APP_WASABI_REGION/" ./.env 
+RUN sed -i "s/guildjson/$REACT_APP_GUILD_BP_JSON/" ./.env 
+
+
 RUN npm ci --silent 
 RUN npm install react-scripts@3.4.1 -g --silent
 
