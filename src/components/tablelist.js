@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(2),
     backgroundColor: theme.palette.text.primary,
-    marginBottom: 10 
+    marginBottom: 10,
+    marginTop: 60
   },
   table: {
     minWidth: 400,

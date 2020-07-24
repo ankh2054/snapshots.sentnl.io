@@ -21,7 +21,7 @@ export const listKeys = (bucket) => {
     return new Promise ((resolve, reject) => {
       const s3params = {
         Bucket: bucket,
-        MaxKeys: 20,
+        MaxKeys: 48,
       };
       s3.listObjectsV2 (s3params, (err, data) => {
         if (err) {

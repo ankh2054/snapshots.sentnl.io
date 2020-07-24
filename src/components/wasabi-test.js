@@ -29,7 +29,7 @@ const listKeys = () => {
     return new Promise ((resolve, reject) => {
       const s3params = {
         Bucket: 'waxtest2',
-        MaxKeys: 20,
+        MaxKeys: 100,
       };
       s3.listObjectsV2 (s3params, (err, data) => {
         if (err) {
