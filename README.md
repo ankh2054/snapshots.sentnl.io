@@ -70,14 +70,15 @@
 
 ```
 docker build -f Dockerfile.prod  \
---build-arg REACT_APP_ACCESS_KEY_ID=xxxxxxxxxx \
---build-arg REACT_APP_SECRET_ACCESS_KEY=xxxxxxxxx \
---build-arg REACT_APP_BUCKET_MAINNET=xxxxxxxxx \
---build-arg REACT_APP_BUCKET_TESTNET=xxxxxxxxx \
---build-arg REACT_APP_WASABI_URL=xxxxxxxxx \
---build-arg REACT_APP_WASABI_REGION=xxxxxxxxx \
---build-arg REACT_APP_GUILD_BP_JSON=xxxxxxxxx \
+--build-arg "REACT_APP_ACCESS_KEY_ID=XXXXXXXXXXXXXXXXXX" \
+--build-arg "REACT_APP_SECRET_ACCESS_KEY=XXXXXXXXXXXXXX" \
+--build-arg "REACT_APP_BUCKET_MAINNET=waxmain42" \
+--build-arg "REACT_APP_BUCKET_TESTNET=waxtestnet42" \
+--build-arg "REACT_APP_WASABI_URL=https://s3.eu-central-1.wasabisys.com/" \
+--build-arg "REACT_APP_WASABI_REGION=eu-central-1" \
+--build-arg "REACT_APP_GUILD_BP_JSON=https://www.sentnl.io/wax.json" \
 -t snapshots.sentnl:prod .
+
 ```
 
 ## Step 2 - Running the docker container.
