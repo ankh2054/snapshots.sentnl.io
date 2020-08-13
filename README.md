@@ -38,16 +38,16 @@
 
 ## ENV Variables
 
-|ENV & ARG                       |Value                                |Description                        |
-|--------------------------------|-------------------------------------------------------------------------|
-|**REACT_APP_ACCESS_KEY_ID**     |`XXXXXXXXXXXXXXXX`                   | Wasabi/S3 access key              |
-|**REACT_APP_SECRET_ACCESS_KEY** |`XXXXXXXXXXXXXXXX`                   | Wasabi/S3 secret key              |
-|**REACT_APP_BUCKET_MAINNET**    |`waxmainnet`                         | Wasabi/S3 bucket name for mainnet |
-|**REACT_APP_BUCKET_TESTNET**    |`waxtestnet`                         | Wasabi/S3 bucket name for testnet |
-|**REACT_APP_WASABI_URL**        |`https://xxx.wasabisys.com/`         | Wasabi/S3 URL for your instances  |
-|**REACT_APP_WASABI_REGION**     |`eu-central-1`                       | Wasabi/S3 bucket region           |
-|**REACT_APP_GUILD_BP_JSON=**    |`http://guild.com/wax.json`          | URL of your .json file            |
-|--------------------------------|-------------------------------------|-----------------------------------|
+|ENV & ARG                       |Value                       |Description                        |
+|--------------------------------|----------------------------------------------------------------|
+|**REACT_APP_ACCESS_KEY_ID**     |`XXXXXXXXXXXXXXXX`          | Wasabi/S3 access key              |
+|**REACT_APP_SECRET_ACCESS_KEY** |`XXXXXXXXXXXXXXXX`          | Wasabi/S3 secret key              |
+|**REACT_APP_BUCKET_MAINNET**    |`waxmainnet`                | Wasabi/S3 bucket name for mainnet |
+|**REACT_APP_BUCKET_TESTNET**    |`waxtestnet`                | Wasabi/S3 bucket name for testnet |
+|**REACT_APP_WASABI_URL**        |`https://xxx.wasabisys.com/`| Wasabi/S3 URL for your instances  |
+|**REACT_APP_WASABI_REGION**     |`eu-central-1`              | Wasabi/S3 bucket region           |
+|**REACT_APP_GUILD_BP_JSON=**    |`http://guild.com/wax.json` | URL of your .json file            |
+|--------------------------------|----------------------------|-----------------------------------|
 
 
 ## Step 1 - Clone and Build the docker container from github.
