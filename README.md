@@ -47,6 +47,7 @@
 |**REACT_APP_WASABI_URL**        |`https://xxx.wasabisys.com/`         | Wasabi/S3 URL for your instances  |
 |**REACT_APP_WASABI_REGION**     |`eu-central-1`                       | Wasabi/S3 bucket region           |
 |**REACT_APP_GUILD_BP_JSON=**    |`http://guild.com/wax.json`          | URL of your .json file            |
+|--------------------------------|-------------------------------------|-----------------------------------|
 
 
 ## Step 1 - Clone and Build the docker container from github.
