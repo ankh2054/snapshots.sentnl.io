@@ -23,7 +23,7 @@ const listKeysWasabi = (result,bucket) => {
         container.Key = item.Key
         container.LastModified = item.LastModified
         container.Size = item.Size
-        container.url = download_url + item.Key
+        container.url = download_url+'/'+item.Key
         container.bucket = bucket
     
         return container
