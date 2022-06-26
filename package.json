@@ -10,7 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "aws-sdk": "^2.709.0",
     "fontsource-roboto": "^2.1.4",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1"
